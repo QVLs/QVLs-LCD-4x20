@@ -1,0 +1,57 @@
+
+/*
+ * LCD_QVL_20_4.c
+ *
+ * Created: 4/22/2020 12:43:31 PM
+ * Author : el_lu
+ */
+#define F_CPU 200000000UL
+#include <avr/io.h>
+
+#include "CARACTERES_ANIMACION.h"
+#include "LCD_LIBRERIA_QVL.h"
+
+
+
+int main(void)
+{
+	LCD_STAR();
+	B_OFF();
+char HOLA[]={'R','E','T','O','\0'};
+	PAUSE_FLUJO(3000,1,0,1);
+//LCD_PRINT_NUMERO(HOLA,0,0);
+/*SEND_DATA(0x4c);*/
+// LIMPIAR_PANTALLA();
+
+
+
+PAUSE_FLUJO(20000,1,0,1);
+// double p=120.00;
+// for(int io=0;io!=5;io++){
+// 	p=p*(float)0.5;
+// 	CONVER_INT_CHAR(p,10,0);
+// 		PAUSE_FLUJO()}
+//  NIVEL_SONIDO(0,0,50);
+
+	while (1)
+    {//POSICIONES_DIRECCIONES_DDRAM(0x54);
+//
+NIVEL_SONIDO(0,0,20);
+ PAUSE_FLUJO(2000,1,0,1);
+/* POSICIONES_DIRECCIONES_DDRAM(0);*/
+ NIVEL_SONIDO(0,0,40);
+ PAUSE_FLUJO(2000,1,0,1);
+/* POSICIONES_DIRECCIONES_DDRAM(0);*/
+ NIVEL_SONIDO(0,0,60);
+ PAUSE_FLUJO(2000,1,0,1);
+/* POSICIONES_DIRECCIONES_DDRAM(0);*/
+ NIVEL_SONIDO(0,0,80);
+ PAUSE_FLUJO(2000,1,0,1);
+ /* POSICIONES_DIRECCIONES_DDRAM(0);*/
+ NIVEL_SONIDO(0,0,100);
+ PAUSE_FLUJO(2000,1,0,1);
+
+for(uint16_t P=10;P!=10000;P++){CONVER_INT_CHAR(P*0.1+0.55,10,0); PAUSE_FLUJO(10000,1,0,1);}
+    }
+}
+
